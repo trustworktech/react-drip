@@ -1,21 +1,92 @@
 {
-  "name": "react-drip",
-  "version": "0.0.2",
-  "description": "Primitive React components for all platforms.",
-  "main": "index.js",
-  "keywords": [
-    "react",
-    "react-native",
-    "styled-components"
-  ],
-  "homepage": "https://github.com/trustwork.com/react-drip",
-  "bugs": {
-    "url": "https://github.com/trustworktech/react-drip/issues",
-    "email": "max@trustwork.com"
+  "name": "ReactDrip",
+  "description": "React Drip or drown",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "webpack --config webpack.prod.config.js --progress && ./node_modules/.bin/babel-node --presets node6 ./index.js",
+    "dev": "webpack --config webpack.config.js --hot --progress && ./node_modules/.bin/babel-node --presets node6 ./index.js",
+    "lint": "eslint src"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/trustworktech/react-drip.git"
+  "author": "Ballers",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.9.1",
+    "express": "^4.16.3",
+    "file-loader": "^1.1.11",
+    "file-type": "^9.0.0",
+    "fs": "^0.0.1-security",
+    "history": "^4.7.2",
+    "hoek": "4.2.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-hot-loader": "^3.1.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "source-list-map": "^2.0.0",
+    "style-loader": "^0.19.0",
+    "styled-components": "^4.2.0",
+    "styled-system": "^4.2.4",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "url-loader": "^0.6.2",
+    "webpack": "3.5.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.22.2",
+    "whatwg-fetch": "^2.0.4"
   },
-  "license": "MIT"
+  "babel": {
+    "presets": [
+      "react-app",
+      "es2015"
+    ],
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": false
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "airbnb"
+    ],
+    "rules": {
+      "consistent-return": 2,
+      "extensions": 2,
+      "no-underscore-dangle": [
+        2,
+        {
+          "allow": [
+            "_id"
+          ]
+        }
+      ],
+      "no-unresolved": 2
+    }
+  },
+  "devDependencies": {
+    "serviceworker-webpack-plugin": "^1.0.0-alpha02",
+    "webpack-cli": "^3.0.6"
+  }
 }
